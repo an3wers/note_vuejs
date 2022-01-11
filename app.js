@@ -11,6 +11,7 @@ const App = {
         }
     },
 
+    // Смотрим за массивом и если, что-то изменяется, то сразу отправляем значения в LS!
     watch: {
         notes: {
             handler(list) {
@@ -23,6 +24,7 @@ const App = {
         }
     },
 
+    // Рендерим на экран список
     mounted() {
         this.getList()
     },
@@ -52,9 +54,6 @@ const App = {
             }
         },
 
-        // editNote(index) {
-        //     console.log(this.notes[index])
-        // }
     }
 
 }
