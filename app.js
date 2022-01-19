@@ -7,7 +7,8 @@ const App = {
                 value: '',
                 placeholder:'Type your note'
             },
-            notes: ['123'],
+            notes: [],
+            
         }
     },
 
@@ -31,13 +32,16 @@ const App = {
 
     methods: {
         inputSubmin() {
-            this.notes.push(this.input.value)
+            this.notes.push({
+                text: this.input.value,
+                id: Date.now(),
+                editing: false
+            })
             // reset
             this.input.value = ''
         },
         remove(index) {
             // удаляем элемент из массива
-            
             this.notes.splice(index, 1)
 
 
@@ -52,6 +56,15 @@ const App = {
             else {
                 this.notes
             }
+        },
+
+        editNote(id) {
+            
+            console.log(id)
+        },
+
+        saveNote(index) {
+
         },
 
     }
